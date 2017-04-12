@@ -59,3 +59,6 @@ gem 'devise'
 gem "geocoder"
 gem "figaro"
 gem 'will_paginate'
+gem 'carrierwave', '~>1.0'
+
+
