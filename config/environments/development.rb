@@ -11,7 +11,7 @@ Rails.application.configure do
     #password: ENV['GMAIL_PASSWORD']
   #}
 
-  config.action_mailer.default_url_options = { host: 'localhost:3030' }
+  config.action_mailer.default_url_options = { host: 'http://localhost:3030/users/password/edit?reset_password_token=ssYo5yc6wrJPSvzBphUE' }
   # Settings specified here will take precedence over those in config/application.rb.
 
   # In the development environment your application's code is reloaded on
