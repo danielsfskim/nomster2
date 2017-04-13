@@ -55,7 +55,8 @@
 <div class="clear"></div>
 
 
-<!-- Modal form -->
+<!-- Modal comment form -->
+
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -80,34 +81,35 @@
   </div>
  </div> 
 
+
 <% if false %>
 Above code creates a message and rating field within the modal.
 <% end %>
 
  <div class="col-10 offset-1"
- <h1 class="pull-left">Comments</h1>
+  <h1 class="float-right">Pictures</h1>
 
 <!-- Button trigger model -->
-<div class="clear"></div>
-  <button type="button" class="btn btn-primary btn-lg float-right" data-toggle="modal" data-target="#myModal">
+    <div class="clear"></div>
+      <button type="button" class="btn btn-primary btn-lg float-right" data-toggle="modal" data-target="#myModal">
     Add a comment
-  </button>
-</div>
-
-<div class ="clear"></div>
+    </button>
+  </div>
 
 
 
-<!-- Modal -->
+
+<!-- Modal photos-->
 <div class="modal fade" id="myPhotoModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">×</span>
-          </button>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">×</span>
+            </button>
             <h4 class="Add a Photo" id="myModalLabel">Add a Photo</h4>
               </div>
+              
             <%= simple_form_for @photo, url: place_photos_path(@place) do |f| %>
                 <div class="modal-body">
                 <%= f.input :picture %>
@@ -116,7 +118,7 @@ Above code creates a message and rating field within the modal.
                 <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                 <%= f.submit "Add a Photo", class: 'btn btn-primary' %>
-          </div>
+           </div>
         <% end %>
       </div>
     </div>
@@ -125,10 +127,12 @@ Above code creates a message and rating field within the modal.
 <div class="col-10 offset-1">
   <h1 class="float-left">Pictures</h1>
 <!-- Photo Button trigger model -->
-  <button type="button" class="float-right btn btn-primary btn-lg" data-toggle="modal" data-target="#myModalphoto">Add a Photo
+  
+  <button type="button" class="btn btn-primary btn-lg float-right " data-toggle="modal" data-target="#myModalphoto">Add a Photo
   
   </button>
 </div>
+
 
 <div class="clear"></div>
 
