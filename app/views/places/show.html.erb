@@ -5,6 +5,14 @@
   <p><%= @place.description %></p>
 
 
+<div class="booyah-box">
+  <% @place.photos.each do |photo| %>
+    <%= image_tag photo.picture %>
+    <%= photo.caption %>
+  <% end %>
+
+
+
 <% if @place.latitude.present? && @place.longitude.present? %>
 
     <script>
@@ -72,8 +80,12 @@
   </div>
  </div> 
 
+<% if false %>
+Above code creates a message and rating field within the modal.
+<% end %>
+
  <div class="col-10 offset-1"
-<h1 class="pull-left">Comments</h1>
+ <h1 class="pull-left">Comments</h1>
 
 <!-- Button trigger model -->
 <div class="clear"></div>
@@ -83,21 +95,6 @@
 </div>
 
 <div class ="clear"></div>
-
-
-<div class="row">
-<% @place.comments.each do |comment| %>
-  <div class="col-12 col-sm-6">
-    <blockquote>
-      <% if comment.humanized_rating.present? %>
-      <b><%= comment.humanized_rating %></b> -
-      <% end %>
-        <%= comment.message %>
-      <small><%= comment.user.email %></small>
-      </blockquote>
-    </div>
-  <% end %>
-</div> 
 
 
 
@@ -129,15 +126,30 @@
   <h1 class="float-left">Pictures</h1>
 <!-- Photo Button trigger model -->
   <button type="button" class="float-right btn btn-primary btn-lg" data-toggle="modal" data-target="#myModalphoto">Add a Photo
+  
   </button>
 </div>
 
 <div class="clear"></div>
 
-<div class="booyah-box">
-  <% @place.photos.each do |photo| %>
-    <%= image_tag photo.picture %>
-    <%= photo.caption %>
+
+<div class="row">
+<% @place.comments.each do |comment| %>
+  <div class="col-12 col-sm-6">
+    <blockquote>
+      <% if comment.humanized_rating.present? %>
+      <b><%= comment.humanized_rating %></b> -
+      <% end %>
+        <%= comment.message %>
+      <small><%= comment.user.email %></small>
+      </blockquote>
+    </div>
   <% end %>
-</div>
+</div> 
+
+
+<% if false %>
+This code will use a loop to grab all the comments from the database and show them on the places page along with the rating, message and email address of the user who created it.
+"humanized_rating" shows the rating along with the comment.
+<% end %>
 
